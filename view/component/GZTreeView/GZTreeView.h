@@ -29,6 +29,12 @@ typedef enum {
 
 -(void)treeView:(GZTreeView*)treeView cellForItem:(id)item treeNodeInfo:(GZTreeNodeInfo*)info;
 
+///展开列表
+-(void)treeView:(GZTreeView *)treeView didUnfoldCell:(UITableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath forHeight:(CGFloat)height;
+
+///合拢列表
+-(void)treeView:(GZTreeView *)treeView didCloseCell:(UITableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath forHeight:(CGFloat)height;
+
 @end
 
 @protocol GZTreeViewDataSource <NSObject>
@@ -41,6 +47,8 @@ typedef enum {
 
 
 -(NSInteger)numberOfRowsInTreeView:(GZTreeView*)treeView;
+
+
 
 @end
 
@@ -55,6 +63,7 @@ typedef enum {
 @property (nonatomic,strong)UIView * contentBgView;
 @property (nonatomic,strong)NSArray * nodeInfos;///数据
 @property (nonatomic)BOOL open;
+@property (nonatomic)BOOL scrollEnabled;//是否可以滑动
 @property (strong, nonatomic)GZTreeNodeCollectionController *treeNodeCollectionController;
 
 @property (nonatomic,strong)id<GZTreeViewDelegate>delegate;

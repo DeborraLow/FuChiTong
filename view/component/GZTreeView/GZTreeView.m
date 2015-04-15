@@ -41,6 +41,7 @@
     [tableView setShowsVerticalScrollIndicator:YES];
     tableView.backgroundColor = [UIColor clearColor];
     [tableView setShowsVerticalScrollIndicator:NO];
+    [tableView setScrollEnabled:_scrollEnabled];
     [self addSubview:tableView];
     self.tableView = tableView;
     
@@ -125,17 +126,31 @@
             NSIndexPath * indexPath2 = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
             [_tableView insertRowsAtIndexPaths:@[indexPath2] withRowAnimation:UITableViewRowAnimationAutomatic];
             [_tableView endUpdates];
-            [_tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+            if (_scrollEnabled) {
+                [_tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+            }
+            if ([_delegate respondsToSelector:@selector(treeView:didUnfoldCell:atIndexPath:forHeight:)]) {
+                TreeContentTableViewCell*contentCell = (TreeContentTableViewCell*)[_tableView cellForRowAtIndexPath:indexPath2];
+                CGFloat height = [contentCell calulateHeightWithDesrip:node.content];
+                [_delegate treeView:self didUnfoldCell:contentCell atIndexPath:indexPath2 forHeight:height];
+            }
         }
         else
         {
             [_tableView beginUpdates];
             [nodeTreeHeadInfos removeObject:nodeTreeHeadInfos[indexPath.row + 1]];
+            
             NSIndexPath * indexPath3 = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+            if ([_delegate respondsToSelector:@selector(treeView:didCloseCell:atIndexPath:forHeight:)]) {
+                TreeContentTableViewCell*contentCell = (TreeContentTableViewCell*)[_tableView cellForRowAtIndexPath:indexPath3];
+                CGFloat height = [contentCell calulateHeightWithDesrip:cell.treeInfo.content];
+                [_delegate treeView:self didCloseCell:contentCell atIndexPath:indexPath3 forHeight:height];
+            }
             [_tableView deleteRowsAtIndexPaths:@[indexPath3] withRowAnimation:UITableViewRowAnimationFade];
             [_tableView endUpdates];
-            [_tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionBottom animated:YES];
-
+            if (_scrollEnabled) {
+                [_tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+            }
         }
         cell.treeInfo.expanded = !cell.treeInfo.expanded;
     }

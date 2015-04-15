@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "CustomerViewController.h"
 #import "FinancingViewController.h"
+#import "OnlineViewController.h"
 
 @interface IndexViewController ()
 
@@ -74,6 +75,7 @@
             [self.navigationController pushViewController:[PlanViewController new] animated:YES];
             break;
         case 1:
+            [self.navigationController pushViewController:[OnlineViewController new] animated:YES];
             break;
         case 2:
             [self.navigationController pushViewController:[FinancingViewController new] animated:YES];

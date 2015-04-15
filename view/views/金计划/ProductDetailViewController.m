@@ -68,6 +68,7 @@
     }
     treeView.nodeInfos = @[@{@"head":[NSString stringWithFormat:@"%@介绍",[productData objectForKey:@"name"]],@"content":content1},@{@"head":@"常见问题",@"content":content2}];
     treeView.open = YES;
+    treeView.scrollEnabled = YES;
     [self.view addSubview:treeView];
     // Do any additional setup after loading the view from its nib.
 }

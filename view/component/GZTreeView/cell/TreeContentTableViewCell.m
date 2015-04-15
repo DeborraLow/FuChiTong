@@ -22,7 +22,7 @@
 
 -(CGFloat)calulateHeightWithDesrip:(NSString *)str
 {
-    CGFloat preMaxWaith =[UIScreen mainScreen].bounds.size.width-32;
+    CGFloat preMaxWaith =self.content.frame.size.width - 5;
     [self.content setPreferredMaxLayoutWidth:preMaxWaith];
     self.content.numberOfLines = 0;
     [self.content layoutIfNeeded];
