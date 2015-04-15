@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FuchiViewController.h"
 
-@interface FeedbackViewController : UIViewController
+@interface FeedbackViewController : FuchiViewController
 
 @end

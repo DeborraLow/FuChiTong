@@ -20,4 +20,16 @@
     // Configure the view for the selected state
 }
 
+-(CGFloat)calulateHeightWithDesrip:(NSString *)str
+{
+    CGFloat preMaxWaith =[UIScreen mainScreen].bounds.size.width-32;
+    [self.content setPreferredMaxLayoutWidth:preMaxWaith];
+    self.content.numberOfLines = 0;
+    [self.content layoutIfNeeded];
+    [self.content setText:str];
+    [self.contentView layoutIfNeeded];
+    CGSize size = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height + 1.0f;
+}
+
 @end

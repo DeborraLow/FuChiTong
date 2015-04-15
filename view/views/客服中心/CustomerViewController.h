@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FuchiViewController.h"
 
-@interface CustomerViewController : UIViewController
+@interface CustomerViewController : FuchiViewController
+- (IBAction)phoneAction:(id)sender;
+- (IBAction)feedAction:(id)sender;
 
 @end

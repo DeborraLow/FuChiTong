@@ -7,6 +7,8 @@
 //
 
 #import "CustomerViewController.h"
+#import "FeedbackViewController.h"
+#import "SIAlertView.h"
 
 @interface CustomerViewController ()
 
@@ -16,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"客服服务";
+    
+ 
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,4 +39,24 @@
 }
 */
 
+- (IBAction)phoneAction:(id)sender {
+    
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:nil andMessage:@"富驰资产客服:400-6582-886"];
+    [alertView addButtonWithTitle:@"拨打"
+                             type:SIAlertViewButtonTypeDefault
+                          handler:^(SIAlertView *alertView) {
+                              NSLog(@"Default Clicked");
+                          }];
+    [alertView addButtonWithTitle:@"取消"
+                             type:SIAlertViewButtonTypeCancel
+                          handler:^(SIAlertView *alertView) {
+                              NSLog(@"Cancel Clicked");
+                          }];
+    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    [alertView show];
+}
+
+- (IBAction)feedAction:(id)sender {
+    [self.navigationController pushViewController:[FeedbackViewController new] animated:YES];
+}
 @end

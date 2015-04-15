@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FuchiViewController.h"
 
-@interface FinancingViewController : UIViewController
+@interface FinancingViewController : FuchiViewController
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end

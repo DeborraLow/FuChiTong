@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TreeContentTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *content;
+
+-(CGFloat)calulateHeightWithDesrip:(NSString*)str;
 
 @end

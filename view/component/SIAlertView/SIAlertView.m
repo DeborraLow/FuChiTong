@@ -661,7 +661,7 @@ static SIAlertView *__si_alert_current_view;
         } else {
             for (NSUInteger i = 0; i < self.buttons.count; i++) {
                 UIButton *button = self.buttons[i];
-                button.frame = CGRectMake(90, y, self.containerView.bounds.size.width - 185, BUTTON_HEIGHT);
+                button.frame = CGRectMake(75, y, self.containerView.bounds.size.width - 155, BUTTON_HEIGHT);
                 if (self.buttons.count > 1) {
                     if (i == self.buttons.count - 1 && ((SIAlertItem *)self.items[i]).type == SIAlertViewButtonTypeCancel) {
                         CGRect rect = button.frame;
@@ -761,6 +761,8 @@ static SIAlertView *__si_alert_current_view;
 {
     self.containerView = [[UIView alloc] initWithFrame:self.bounds];
     self.containerView.backgroundColor = [UIColor whiteColor];
+    self.containerView.layer.borderColor = [RGBCOLOR(247, 94, 37) CGColor];
+    self.containerView.layer.borderWidth = 1;
     self.containerView.layer.cornerRadius = self.cornerRadius;
     self.containerView.layer.shadowOffset = CGSizeZero;
     self.containerView.layer.shadowRadius = self.shadowRadius;
