@@ -12,6 +12,7 @@
 #import "CustomerViewController.h"
 #import "FinancingViewController.h"
 #import "OnlineViewController.h"
+#import "IndividualCenterViewController.h"
 
 @interface IndexViewController ()
 
@@ -50,7 +51,13 @@
 -(void)personAction
 {
     NSLog(@"personaction");
-    [self.navigationController pushViewController:[LoginViewController new] animated:YES];
+    if ([USER_DEFAULT objectForKey:ISLOGIN]) {
+        [self.navigationController pushViewController:[IndividualCenterViewController new] animated:YES];
+    }
+    else
+    {
+        [self.navigationController pushViewController:[LoginViewController new] animated:YES];
+    }
 }
 
 

@@ -24,6 +24,7 @@
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [UINavigationBar appearance].backIndicatorImage = image;
     [UINavigationBar appearance].backIndicatorTransitionMaskImage = image;
+
     [[UINavigationBar appearance] setTintColor:[UIColor clearColor]];
     [[UINavigationBar appearance] setBackgroundImage:UIIMAGE(@"nav_bg") forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
