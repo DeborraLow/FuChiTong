@@ -59,7 +59,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if ([_delegate respondsToSelector:@selector(sanbiaoView:selectedIndexPath:)]) {
+        [_delegate sanbiaoView:self selectedIndexPath:indexPath];
+    }
 }
 
 - (IBAction)qixianAction:(id)sender {

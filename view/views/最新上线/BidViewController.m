@@ -1,24 +1,25 @@
 //
-//  JoinViewController.m
+//  BidViewController.m
 //  FuChiTong
 //
-//  Created by LJ on 15/4/15.
+//  Created by LJ on 15/4/16.
 //  Copyright (c) 2015年 zwj. All rights reserved.
 //
 
-#import "JoinViewController.h"
+#import "BidViewController.h"
 #import "PayViewController.h"
+#import "BidDetailViewController.h"
 
-@interface JoinViewController ()
+@interface BidViewController ()
 
 @end
 
-@implementation JoinViewController
+@implementation BidViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"活期投资";
-    
+    self.title = @"投标";
+    [_scrollView setContentSize:CGSizeMake(300, 564)];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -37,7 +38,11 @@
 }
 */
 
-- (IBAction)joinAction:(id)sender {
+- (IBAction)detailAction:(id)sender {
+    [self.navigationController pushViewController:[BidDetailViewController new] animated:YES];
+}
+
+- (IBAction)investAction:(id)sender {
     [self.navigationController pushViewController:[PayViewController new] animated:YES];
 }
 @end

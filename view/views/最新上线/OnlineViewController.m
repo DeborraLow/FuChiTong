@@ -12,8 +12,9 @@
 #import "SIAlertView.h"
 #import "CurrentViewController.h"
 #import "JoinViewController.h"
+#import "BidViewController.h"
 
-@interface OnlineViewController ()<TouziViewDelegate>
+@interface OnlineViewController ()<TouziViewDelegate,SanbiaoViewDelegate>
 {
     BOOL isSelectedOne;
     UIView * contentView;
@@ -146,6 +147,14 @@
     [self.navigationController pushViewController:[JoinViewController new] animated:YES];
 }
 
+
+#pragma mark SanbiaoViewDelegate
+-(void)sanbiaoView:(SanbiaoView *)view selectedIndexPath:(NSIndexPath *)indexPath
+{
+    [self.navigationController pushViewController:[BidViewController new] animated:YES];
+
+}
+
 ///显示散标和活期投资界面
 -(void)showContentView:(NSInteger)type
 {
@@ -156,6 +165,7 @@
         SanbiaoView*view = [[[NSBundle mainBundle] loadNibNamed:@"SanbiaoView" owner:nil options:nil] lastObject];
         [view setFrame:CGRectMake(0, 70, view.frame.size.width, self.view.frame.size.height)];
         view.backgroundColor = [UIColor clearColor];
+        view.delegate = self;
         [_scrollView addSubview:view];
         contentView = view;
         _scrollView.scrollEnabled = NO;
