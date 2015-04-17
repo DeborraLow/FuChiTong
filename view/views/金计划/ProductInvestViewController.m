@@ -24,6 +24,18 @@
     if (self) {
         productData = data;
         selectedName = [data objectForKey:@"names"][index];
+        [self initTitleWithPlan];
+       
+    }
+    return self;
+}
+
+-(id)initWithProductData:(NSDictionary *)data
+{
+    if (self) {
+        productData = data;
+        selectedName = @"单月金A";
+        [self initTitle];
     }
     return self;
 }
@@ -31,10 +43,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.scrollView setContentSize:CGSizeMake(GZContent_Width, 620)];
-    self.title = [NSString stringWithFormat:@"%@%@",[productData objectForKey:@"name"],selectedName];
-    self.titleLabel.text = [NSString stringWithFormat:@"%@%@",[productData objectForKey:@"name"],selectedName];
+    
     // Do any additional setup after loading the view from its nib.
 }
+
+//金计划---初始化标题
+-(void)initTitleWithPlan
+{
+    self.title = [NSString stringWithFormat:@"%@%@",[productData objectForKey:@"name"],selectedName];
+    self.titleLabel.text = [NSString stringWithFormat:@"%@%@",[productData objectForKey:@"name"],selectedName];
+}
+
+//产品详情初始化标题
+-(void)initTitle
+{
+    self.title = @"投资详情";
+    self.titleLabel.text = [productData objectForKey:@"name"];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

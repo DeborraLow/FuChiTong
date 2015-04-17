@@ -10,10 +10,10 @@
 
 typedef NS_ENUM(NSInteger , InvestButtonType)
 {
-    ///理财产品
+    ///活期
     InvestButtonTypeProduct = 0,
-    ///投资
-    InvestButtonTypeInvest,
+    ///散标
+    InvestButtonTypePowder,
 };
 
 @protocol InvestRecordCellDelegate;
@@ -25,6 +25,8 @@ typedef NS_ENUM(NSInteger , InvestButtonType)
 @property (nonatomic, assign) InvestButtonType investButtonType;
 @property (nonatomic) id<InvestRecordCellDelegate>delegate;
 @property (weak, nonatomic) IBOutlet UILabel *text;
+@property (weak, nonatomic) IBOutlet UIButton *detailButton;
+@property (weak, nonatomic) IBOutlet UIButton *quiteButton;
 
 
 @end

@@ -12,14 +12,27 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+}
+
+-(void)layoutSubviews
+{
     if (_investButtonType == InvestButtonTypeProduct) {
-       self.text.text = @"恭喜加入活期投资A";
+        self.text.text = @"恭喜加入活期投资A";
+       
     }
+    else
+    {
+        self.text.text = @"恭喜加入\"散标\"理财产品";
+        self.detailButton.center = self.quiteButton.center;
+        self.quiteButton.hidden = YES;
+    }
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

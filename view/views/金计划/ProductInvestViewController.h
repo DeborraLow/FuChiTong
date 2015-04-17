@@ -16,6 +16,12 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+
+///金计划详情入口
 -(id)initWithProductData:(NSDictionary*)data index:(NSInteger)index;
 
+
+///产品详情入口
+-(id)initWithProductData:(NSDictionary *)data;
 @end
