@@ -9,8 +9,16 @@
 #import "IndividualAccountViewController.h"
 #import "InvestRecordViewController.h"
 #import "HistoryRecordsViewController.h"
+#import "RechargeViewController.h"
+#import "ExtractionViewController.h"
+#import "ShareView.h"
+#import "GZAnimationController.h"
+#import "GZMessUtils.h"
 
-@interface IndividualAccountViewController ()
+@interface IndividualAccountViewController ()<ShareViewDelegate,GZMessUtilsDelegate>
+{
+    ShareView*shareView;
+}
 
 @end
 
@@ -44,9 +52,11 @@
 }
 
 - (IBAction)tixianAction:(id)sender {
+    [self.navigationController pushViewController:[ExtractionViewController new] animated:YES];
 }
 
 - (IBAction)chongzhiAction:(id)sender {
+    [self.navigationController pushViewController:[RechargeViewController new] animated:YES];
 }
 
 - (IBAction)buttonAction:(id)sender {
@@ -61,12 +71,38 @@
             
             break;
             case 3:
+        {
+            shareView = [[[NSBundle mainBundle] loadNibNamed:@"ShareView" owner:self options:nil] lastObject];
+            shareView.delegate = self;
+            shareView.frame = CGRectMake(0, 0, 250, 190);
+            shareView.backgroundColor = [UIColor clearColor];
+            shareView.center = self.view.center;
+            [[GZMessUtils sharedUtils] showDarkMask:[[UIApplication sharedApplication] keyWindow] delegate:self];
+            [[[UIApplication sharedApplication] keyWindow] addSubview:shareView];
+            [GZAnimationController showAlertView:shareView withAnimation:YES];
+        }
             
             break;
             
         default:
             break;
     }
+}
+
+
+#pragma mark ShareViewDelegate
+-(void)didShare:(NSInteger)index
+{
+    switch (index) {
+        case 0:
+            
+            break;
+            
+        default:
+            break;
+    }
+    [shareView removeFromSuperview];
+    [[GZMessUtils sharedUtils] removeDarkMask];
 }
 
 @end

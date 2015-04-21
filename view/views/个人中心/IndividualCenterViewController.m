@@ -10,9 +10,11 @@
 #import "GZAnimationController.h"
 #import "GZSystemModelUtils.h"
 #import "IndividualAccountViewController.h"
+#import "GZMessUtils.h"
+#import "SettingViewController.h"
 
 
-@interface IndividualCenterViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIPickerViewDataSource>
+@interface IndividualCenterViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIPickerViewDataSource,GZMessUtilsDelegate>
 {
     UIView * photoAlertView;
 }
@@ -44,7 +46,7 @@
 
 -(void)settingAction
 {
-    
+    [self.navigationController pushViewController:[SettingViewController new] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,8 +103,10 @@
     CGFloat x = self.view.center.x ;
     CGFloat y = self.view.center.y;
     photoAlertView.center = CGPointMake(x,y);
-    [self.view addSubview:photoAlertView];
     
+    ///把弹框放入keywindow视图层
+    [[GZMessUtils sharedUtils] showDarkMask:[[UIApplication sharedApplication] keyWindow] delegate:self];
+    [[[UIApplication sharedApplication] keyWindow] addSubview:photoAlertView];
     [GZAnimationController showAlertView:photoAlertView withAnimation:YES];
 }
 
@@ -123,6 +127,7 @@
         default:
             break;
     }
+    [[GZMessUtils sharedUtils] removeDarkMask];
 }
 
 #pragma UIImagePickerControllerDelegate

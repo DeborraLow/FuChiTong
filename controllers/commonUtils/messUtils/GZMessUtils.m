@@ -78,9 +78,11 @@
 
 -(void)tapAction:(UIGestureRecognizer*)gesture
 {
-    [_dview removeFromSuperview];
-    _dview = nil;
-    [self.delegate didTapOnDarkView];
+    if ([_delegate respondsToSelector:@selector(didTapOnDarkView)]) {
+        [_dview removeFromSuperview];
+        _dview = nil;
+        [self.delegate didTapOnDarkView];
+    }
 }
 
 @end

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChoosePayViewController">
+            <connections>
+                <outlet property="tableView" destination="1gD-7H-1wk" id="urL-bN-6mg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="单笔充值金额：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYw-PV-cM6">
+                    <rect key="frame" x="23" y="78" width="107" height="21"/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                    <color key="textColor" red="0.94117647059999998" green="0.39607843139999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="200000元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnF-vF-eJx">
+                    <rect key="frame" x="126" y="78" width="149" height="21"/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                    <color key="textColor" red="0.94117647059999998" green="0.39607843139999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="需要支付：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLC-sd-371">
+                    <rect key="frame" x="23" y="163" width="114" height="21"/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="22"/>
+                    <color key="textColor" red="0.94117647059999998" green="0.39607843139999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="￥200000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uI-Gn-8ek">
+                    <rect key="frame" x="135" y="160" width="167" height="28"/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="25"/>
+                    <color key="textColor" red="0.94117647059999998" green="0.39607843139999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GV6-g3-tSF">
+                    <rect key="frame" x="10" y="515" width="300" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="GiS-BO-Yi9"/>
+                    </constraints>
+                    <state key="normal" image="customer_button_normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确认支付" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qz8-Np-HgE">
+                    <rect key="frame" x="128" y="530" width="64" height="16"/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="individual_pay_list_bg" translatesAutoresizingMaskIntoConstraints="NO" id="1ie-O1-rkM">
+                    <rect key="frame" x="10" y="350" width="300" height="150"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1gD-7H-1wk">
+                    <rect key="frame" x="10" y="352" width="300" height="150"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="ecL-iq-XEk"/>
+                    </constraints>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkL-LJ-3RG">
+                    <rect key="frame" x="10" y="320" width="232" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="uxQ-LL-FQ0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                    <color key="textColor" red="0.74509803921568629" green="0.71372549019607845" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="GkL-LJ-3RG" secondAttribute="trailing" constant="78" id="4LS-Kx-sqq"/>
+                <constraint firstItem="1gD-7H-1wk" firstAttribute="top" secondItem="GkL-LJ-3RG" secondAttribute="bottom" constant="11" id="CkG-F6-gi7"/>
+                <constraint firstItem="GV6-g3-tSF" firstAttribute="centerX" secondItem="qz8-Np-HgE" secondAttribute="centerX" constant="0.5" id="EHQ-Vs-eGC"/>
+                <constraint firstAttribute="bottom" secondItem="GV6-g3-tSF" secondAttribute="bottom" constant="8" id="JL2-6u-upx"/>
+                <constraint firstItem="1gD-7H-1wk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="hq0-uo-nVH"/>
+                <constraint firstAttribute="trailing" secondItem="1gD-7H-1wk" secondAttribute="trailing" constant="10" id="i02-kk-x4p"/>
+                <constraint firstItem="GV6-g3-tSF" firstAttribute="top" secondItem="1gD-7H-1wk" secondAttribute="bottom" constant="13" id="mIk-Ba-E6Q"/>
+                <constraint firstItem="GkL-LJ-3RG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="tzh-Kd-ciB"/>
+                <constraint firstItem="GV6-g3-tSF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="wep-aW-abl"/>
+                <constraint firstItem="GV6-g3-tSF" firstAttribute="centerY" secondItem="qz8-Np-HgE" secondAttribute="centerY" constant="-0.5" id="x8J-YV-u5j"/>
+                <constraint firstAttribute="trailing" secondItem="GV6-g3-tSF" secondAttribute="trailing" constant="10" id="ywg-G9-Cio"/>
+            </constraints>
+            <point key="canvasLocation" x="267" y="292"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="customer_button_normal" width="300" height="45"/>
+        <image name="individual_pay_list_bg" width="350" height="160"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
